@@ -1,0 +1,21 @@
+<!-- this form is used for submitting a new student -->
+<!-- ngSubmit is for submitting a form. it runs a function similar to ngClick -->
+<form ng-submit="$ctrl.postData($ctrl.newStudent);">
+  <!-- these three inputs are for the name, favorite food, and bootcamp favorite properties -->
+  <input type="text" placeholder="Name" ng-model="$ctrl.newStudent.name">
+  <input type="text" placeholder="Favorite Food" ng-model="$ctrl.newStudent.fav_food">
+  <input type="text" placeholder="Bootcamp Favorite" ng-model="$ctrl.newStudent.boot_fav">
+  <button>Add New Student</button>
+</form>
+
+<!-- ngRepeat of this section for each student in the array known as $ctrl.students -->
+<section ng-repeat="student in $ctrl.students">
+  <!-- when you click out of the input, it will run the function assigned to ngBlur -->
+  <input class="edit__input" type="text" ng-blur="$ctrl.updateData(student);" ng-model="student.name">
+  <!-- when you click out of the input, it will run the function assigned to ngBlur -->
+  <input class="edit__input" type="text" ng-blur="$ctrl.updateData(student);" ng-model="student.fav_food">
+  <!-- when you click out of the input, it will run the function assigned to ngBlur -->
+  <input class="edit__input" type="text" ng-blur="$ctrl.updateData(student);" ng-model="student.boot_fav">
+  <!-- when you click this button, it will run the function assigned to ngClick -->
+  <button ng-click="$ctrl.deleteData(student.id);">X</button>
+</section>

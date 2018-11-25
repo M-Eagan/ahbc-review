@@ -1,0 +1,5 @@
+/* remove the borders from this class */
+input.edit__input {
+  border: none;
+  display: block;
+}
